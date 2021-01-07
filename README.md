@@ -36,15 +36,21 @@ How to run the game
 
 >On Windows 🖥:
 
-`g++-10 -lopengl32 -lglew32 -lfreeglut -lglu32 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz`
+```
+g++-10 -lopengl32 -lglew32 -lfreeglut -lglu32 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
+```
 
 >On MacOS 🍎:
 
-`g++-10 -Wno-deprecated -framework OpenGL -framework GLUT Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz`
+```
+g++-10 -Wno-deprecated -framework OpenGL -framework GLUT Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
+```
 
 >On Linux 🐧:
 
-`g++-10 -lglut -lGLU -lGL Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz`
+```
+g++-10 -lglut -lGLU -lGL Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
+```
 
 If you happen to have any issue trying to compile the program, here's a Gist to help you: link.
 
