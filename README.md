@@ -30,5 +30,16 @@ Finally, you can use the mouse to control the camera in the horizontal axis.
 * Wall block destroyed: -5 points
 
 > How to run the game
-📎
+
+On Windows 🖥:
+---
+`g++-10 -lopengl32 -lglew32 -lfreeglut -lglu32 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz`
+
+On MacOS 🍎:
+---
+`g++-10 -Wno-deprecated -framework OpenGL -framework GLUT Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz`
+
+On Linux 🐧:
+---
+`g++-10 -lglut -lGLU -lGL Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz`
 > Technologies used
