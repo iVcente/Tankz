@@ -30,5 +30,5 @@ Finally, you can use the mouse to control the camera in the horizontal axis.
 * Wall block destroyed: -5 points
 
 > How to run the game
-
+📎
 > Technologies used
