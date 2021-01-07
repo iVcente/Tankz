@@ -403,46 +403,46 @@ void mouse(int xPos, int yPos) {
 void keyboard(unsigned char key, int x, int y) {
 	switch (key) {
 		case 'w':
-			player.moveForward(); // Move tank forward
+			player.moveForward(); // Moves the tank forward
 			break;
 		case 's': 
-			player.moveBackward(); // Move tank backward
+			player.moveBackward(); // Moves the tank backward
 			break;
 		case 'a':
-			player.rotateLeft(); // Rotate tank to the left
+			player.rotateLeft(); // Rotates the tank to the left
 			break;
 		case ' ': // Shoots
 			if (!projectile.isLaunched())
 				player.shoot(projectile);
 			break;
 		case 'd':
-			player.rotateRight(); // Rotate tank to the right
+			player.rotateRight(); // Rotates the tank to the right
 			break;
 		case 'i':
-            camera.moveForward(); // Move the camera forward
+            camera.moveForward(); // Moves the camera forward
 			break;
 		case 'k':
-            camera.moveBackward(); // Move the camera backward
+            camera.moveBackward(); // Moves the camera backward
 			break;
 		case 'l':
-            camera.moveUp(); // Move the camera up
+            camera.moveUp(); // Moves the camera up
 			break;
         case 'j':
-			camera.moveDown(); // Move the camera down
+			camera.moveDown(); // Moves the camera down
 			break;
-		case '1': // Set the camera position looking to the center of the scenario while being at the left side
+		case '1': // Sets the camera position looking to the center of the scenario while being at the left side
 			camera.setCameraPosition(Vec3(-5.0f, 8.0f, -12.0f), Vec3(1.0f, 0.0f, 0.0f));
 			break;
-		case '2': // Set the camera position looking to the center of the scenario while being at the top side
+		case '2': // Sets the camera position looking to the center of the scenario while being at the top side
 			camera.setCameraPosition(Vec3(25.0f, 8.0f, -30.0f), Vec3(0.0f, 0.0f, 1.0f));
 			break;
-		case '3': // Set the camera position looking to the center of the scenario while being at the right side
+		case '3': // Sets the camera position looking to the center of the scenario while being at the right side
 			camera.setCameraPosition(Vec3(55.0f, 8.0f, -12.0f), Vec3(-1.0f, 0.0f, 0.0f));
 			break;
-		case '4': // Set the camera position looking to the center of the scenario while being at the bottom side
+		case '4': // Sets the camera position looking to the center of the scenario while being at the bottom side
 			camera.setCameraPosition(Vec3(25.0f, 8.0f, 5.0f), Vec3(0.0f, 0.0f, -1.0f));
 			break;
-		case '5': // Set the camera position looking to the center of the scenario while being at the left side and with a higher Y
+		case '5': // Sets the camera position looking to the center of the scenario while being at the left side and with a higher Y
 			camera.setCameraPosition(Vec3(-5.0f, 15.0f, -12.0f), Vec3(1.0f, 0.0f, 0.0f));
 			break;
     	case 'f':
