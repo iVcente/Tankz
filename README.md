@@ -46,5 +46,16 @@ How to run the game
 
 `g++-10 -lglut -lGLU -lGL Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz`
 
-Technologies used
+If you happen to have any issue trying to compile the program, here's a Gist to help you: link.
+
+Technologies and libraries used
 ---
+* C++
+* OpenGL
+* [stb](https://github.com/nothings/stb) (stb_image.h)
+
+I got help from:
+---
+
+* My college professor: Márcio Sarroglia Pinho
+* These two channels on YouTube helped a lot: [Sergio Silva](https://www.youtube.com/channel/UCtaYud62YmszOEpGwkWVJPw) and [Tech with Tim](https://www.youtube.com/c/TechWithTim/featured)
