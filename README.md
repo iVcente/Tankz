@@ -10,6 +10,10 @@ You can use the following commands:
 * `A` : Rotates the tank to the left
 * `D` : Rotates the tank to the right
 * `Space Bar` : Shoots
+* `↑` : Rotates the tank cannon up
+* `↓` : Rotates the tank cannon down
+* `←` : Rotates the tank second axis to the left
+* `→` : Rotates the tank second axis to the right
 * `I` : Moves the camera forward
 * `K` : Moves the camera backward
 * `L` : Moves the camera up
