@@ -5,6 +5,10 @@ This is a simple 3D game where you control a tank and the objective is to destro
 <img src="https://media.giphy.com/media/Emat6yP6sZR50TK0MB/giphy.gif">
 </p>
 
+<p align="center">
+<img src="https://media.giphy.com/media/geCQavOUZHWqJymaAp/giphy.gif">
+</p>
+
 How to play the game
 ---
 
