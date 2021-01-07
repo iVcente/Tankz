@@ -4,10 +4,10 @@ This is a simple 3D game where you control a tank and the objective is to destro
 > How to play the game
 
 You can use the following commands:
-* `W` : Moves tank forward;
-* `S` : Moves tank backward;
-* `A` : Rotates tank to the left;
-* `D` : Rotates tank to the right;
+* `W` : Moves the tank forward
+* `S` : Moves the tank backward
+* `A` : Rotates the tank to the left
+* `D` : Rotates the tank to the right
 * `Space Bar` : Shoots
 * `I` : Moves the camera forward
 * `K` : Moves the camera backward
@@ -24,6 +24,10 @@ You can use the following commands:
 Finally, you can use the mouse to control the camera in the horizontal axis.
 
 > How the score system works
+
+* Enemy destroyed: +10 points
+* Ally destroyed: -10 points
+* Wall block destroyed: -5 points
 
 > How to run the game
 
