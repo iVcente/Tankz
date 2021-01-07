@@ -4,8 +4,8 @@ This is a simple 3D game where you control a tank and the objective is to destro
 > How to play the game
 
 You can use the following commands:
-* **W** : Moves tank forward;
-* **S** : Moves tank backward;
+* `**W**` : Moves tank forward;
+* `S` : Moves tank backward;
 * **A** : Rotates tank to the left;
 * **D** : Rotates tank to the right;
 * **Space Bar** : Shoots
