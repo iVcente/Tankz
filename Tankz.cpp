@@ -469,16 +469,16 @@ void keyboard(unsigned char key, int x, int y) {
 void arrowKeys(int aKeys, int x, int y)  {
 	switch(aKeys) {
 		case GLUT_KEY_UP:
-			player.rotateCannonUp(); // Rotate the tank cannon up
+			player.rotateCannonUp(); // Rotates the tank cannon up
 			break;
 	    case GLUT_KEY_DOWN:
-			player.rotateCannonDown(); // Rotate the tank cannon down
+			player.rotateCannonDown(); // Rotates the tank cannon down
 			break;
 		case GLUT_KEY_LEFT:
-			player.rotateAxisLeft(); // Rotate the tank axis to the left
+			player.rotateAxisLeft(); // Rotates the tank axis to the left
 			break;
 		case GLUT_KEY_RIGHT:
-			player.rotateAxisRight(); // Rotate the tank axis to the right
+			player.rotateAxisRight(); // Rotates the tank axis to the right
 			break;
 		default:
 			break;
