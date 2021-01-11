@@ -42,19 +42,19 @@ How the score system works
 How to run the game
 ---
 
->On Windows 🖥:
+> On Windows 🖥:
 
 ```
 g++-10 -lopengl32 -lglew32 -lfreeglut -lglu32 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
 ```
 
->On MacOS 🍎:
+> On MacOS 🍎:
 
 ```
 g++-10 -Wno-deprecated -framework OpenGL -framework GLUT Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
 ```
 
->On Linux 🐧:
+> On Linux 🐧:
 
 ```
 g++-10 -lglut -lGLU -lGL Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
