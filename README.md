@@ -60,7 +60,7 @@ g++-10 -Wno-deprecated -framework OpenGL -framework GLUT Tankz.cpp Camera.cpp Ga
 g++-10 -lglut -lGLU -lGL Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
 ```
 
-If you happen to have any issue trying to compile the program, here's a Gist to help you: link.
+If you happen to have any issue trying to compile the program, here's a [Gist](https://gist.github.com/iVcente/812e65c551392ae0337e3afdc870032e) to help you.
 
 Technologies and libraries used
 ---
