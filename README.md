@@ -9,26 +9,26 @@ How to play the game
 ---
 
 You can use the following commands:
-* `W` : Moves the tank forward
-* `S` : Moves the tank backward
-* `A` : Rotates the tank to the left
-* `D` : Rotates the tank to the right
-* `Space Bar` : Shoots
-* `↑` : Rotates the tank cannon up
-* `↓` : Rotates the tank cannon down
-* `←` : Rotates the tank second axis to the left
-* `→` : Rotates the tank second axis to the right
-* `I` : Moves the camera forward
-* `K` : Moves the camera backward
-* `L` : Moves the camera up
-* `J` : Moves the camera down
-* `1` : Sets the camera position looking to the center of the scenario while being at the left side
-* `2` : Sets the camera position looking to the center of the scenario while being at the top side
-* `3` : Sets the camera position looking to the center of the scenario while being at the right side
-* `4` : Set the camera position looking to the center of the scenario while being at the bottom side
-* `5` : Set the camera position looking to the center of the scenario while being at the left side and with a higher Y
-* `F` : Full screen
-* `ESC` : Exits the program
+* `W` : Moves the tank forward;
+* `S` : Moves the tank backward;
+* `A` : Rotates the tank to the left;
+* `D` : Rotates the tank to the right;
+* `Space Bar` : Shoots;
+* `↑` : Rotates the tank cannon up;
+* `↓` : Rotates the tank cannon down;
+* `←` : Rotates the tank second axis to the left;
+* `→` : Rotates the tank second axis to the right;
+* `I` : Moves the camera forward;
+* `K` : Moves the camera backward;
+* `L` : Moves the camera up;
+* `J` : Moves the camera down;
+* `1` : Sets the camera position looking to the center of the scenario while being at the left side;
+* `2` : Sets the camera position looking to the center of the scenario while being at the top side;
+* `3` : Sets the camera position looking to the center of the scenario while being at the right side;
+* `4` : Set the camera position looking to the center of the scenario while being at the bottom side;
+* `5` : Set the camera position looking to the center of the scenario while being at the left side and with a higher Y;
+* `F` : Full screen;
+* `ESC` : Exits the program.
 
 Finally, you can use the mouse to control the camera in the horizontal axis.
 
