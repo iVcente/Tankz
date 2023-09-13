@@ -35,9 +35,9 @@ Finally, you can use the mouse to control the camera in the horizontal axis.
 How the score system works
 ---
 
-* Enemy destroyed: +10 points
-* Ally destroyed: -10 points
-* Wall block destroyed: -5 points
+* Enemy destroyed: +10 points;
+* Ally destroyed: -10 points;
+* Wall block destroyed: -5 points.
 
 How to run the game
 ---
@@ -45,19 +45,19 @@ How to run the game
 > On Windows 🖥:
 
 ```
-g++-10 -lopengl32 -lglew32 -lfreeglut -lglu32 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
+g++-10 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz -lopengl32 -lglew32 -lfreeglut -lglu32 
 ```
 
 > On MacOS 🍎:
 
 ```
-g++-10 -Wno-deprecated -framework OpenGL -framework GLUT Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
+g++-10 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz -Wno-deprecated -framework OpenGL -framework GLUT
 ```
 
 > On Linux 🐧:
 
 ```
-g++-10 -lglut -lGLU -lGL Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz
+g++-10 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz -lglut -lGLU -lGL
 ```
 
 If you happen to have any issue trying to compile the program, here's a [Gist](https://gist.github.com/iVcente/812e65c551392ae0337e3afdc870032e) to help you.
@@ -71,5 +71,5 @@ Technologies and libraries used
 I got help from:
 ---
 
-* My college professor: Márcio Sarroglia Pinho
-* These two channels on YouTube helped a lot: [Sergio Silva](https://www.youtube.com/channel/UCtaYud62YmszOEpGwkWVJPw) and [Tech with Tim](https://www.youtube.com/c/TechWithTim/featured)
+* My college professor: Márcio Sarroglia Pinho;
+* These two channels on YouTube helped a lot: [Sergio Silva](https://www.youtube.com/channel/UCtaYud62YmszOEpGwkWVJPw) and [Tech with Tim](https://www.youtube.com/c/TechWithTim/featured).
