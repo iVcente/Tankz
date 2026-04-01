@@ -149,7 +149,7 @@ void loadTexture(GLuint textureID, std::string filePath) {
 		stbi_image_free(imageData);
 	}
 	else {
-		std::cout << "ERROR: It wasnt possible to load the texture!" << filePath.c_str() << std::endl;
+		std::cout << "ERROR: It wasn't possible to load the texture! " << filePath.c_str() << std::endl;
 		exit(EXIT_FAILURE);
 	}
 }
@@ -165,12 +165,14 @@ void loadTextures() {
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 	glGenTextures(6, texturesIDs);
 
-	loadTexture(texturesIDs[0], "Images/FloorTexture2.png");
-	loadTexture(texturesIDs[1], "Images/WallTexture3.png");
-	loadTexture(texturesIDs[2], "Images/DivisionWallTexture2.png");
-	loadTexture(texturesIDs[3], "Images/Camouflage7.png");
-	loadTexture(texturesIDs[4], "Images/Camouflage8.png");
-	loadTexture(texturesIDs[5], "Images/Camouflage9.png");
+	std::string filePath = (getExecutableDir() / "Images").string();
+
+	loadTexture(texturesIDs[0], filePath + "/FloorTexture2.png");
+	loadTexture(texturesIDs[1], filePath + "/WallTexture3.png");
+	loadTexture(texturesIDs[2], filePath + "/DivisionWallTexture2.png");
+	loadTexture(texturesIDs[3], filePath + "/Camouflage7.png");
+	loadTexture(texturesIDs[4], filePath + "/Camouflage8.png");
+	loadTexture(texturesIDs[5], filePath + "/Camouflage9.png");
 }
 
 /* 
