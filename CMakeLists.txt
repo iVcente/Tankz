@@ -1,4 +1,14 @@
 cmake_minimum_required(VERSION 3.16)
+
+# -- vcpkg fallback (if toolchain wasn't passed via -DCMAKE_TOOLCHAIN_FILE) ----
+if(WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    if(DEFINED ENV{VCPKG_ROOT})
+        set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+    elseif(EXISTS "C:/vcpkg/scripts/buildsystems/vcpkg.cmake")
+        set(CMAKE_TOOLCHAIN_FILE "C:/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+    endif()
+endif()
+
 project(Tankz LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -33,43 +43,24 @@ target_link_libraries(Tankz PRIVATE OpenGL::GL)
 if(WIN32)
     # -- Windows ----------------------------------------------------------------
     # Expects freeglut and GLEW installed via vcpkg:
-    #   vcpkg install freeglut:x64-windows glew:x64-windows
+    #   vcpkg install freeglut glew
 
-    find_path(FREEGLUT_INCLUDE_DIR GL/glut.h)
-    find_path(GLEW_INCLUDE_DIR GL/glew.h)
+    find_package(GLUT REQUIRED)
+    find_package(GLEW REQUIRED)
 
-    # Explicitly search only the release lib directory so MSVC never tries
-    # to link freeglutd.lib (which vcpkg doesn't ship by default).
-    find_library(FREEGLUT_LIBRARY
-        NAMES freeglut
-        NO_DEFAULT_PATH
-        PATHS ${FREEGLUT_INCLUDE_DIR}/../lib
-              C:/vcpkg/installed/x64-windows/lib)
-
-    find_library(GLEW_LIBRARY
-        NAMES glew32
-        NO_DEFAULT_PATH
-        PATHS ${GLEW_INCLUDE_DIR}/../lib
-              C:/vcpkg/installed/x64-windows/lib)
-
-    if(NOT FREEGLUT_INCLUDE_DIR OR NOT FREEGLUT_LIBRARY)
-        message(FATAL_ERROR
-            "freeglut not found. Run: vcpkg install freeglut:x64-windows")
+    if(NOT GLUT_FOUND)
+        message(FATAL_ERROR "freeglut not found. Run: vcpkg install freeglut")
     endif()
-    if(NOT GLEW_INCLUDE_DIR OR NOT GLEW_LIBRARY)
-        message(FATAL_ERROR
-            "GLEW not found. Run: vcpkg install glew:x64-windows")
+    if(NOT GLEW_FOUND)
+        message(FATAL_ERROR "GLEW not found. Run: vcpkg install glew")
     endif()
 
     # vcpkg freeglut puts headers at <include>/GL/glut.h, but the source
     # includes bare <glut.h>, so we expose both the root and the GL/ subdir.
-    target_include_directories(Tankz PRIVATE
-        ${FREEGLUT_INCLUDE_DIR}
-        ${FREEGLUT_INCLUDE_DIR}/GL
-        ${GLEW_INCLUDE_DIR}
-        ${GLEW_INCLUDE_DIR}/GL
-    )
-    target_link_libraries(Tankz PRIVATE ${FREEGLUT_LIBRARY} ${GLEW_LIBRARY} OpenGL::GLU)
+    get_target_property(_glut_inc GLUT::GLUT INTERFACE_INCLUDE_DIRECTORIES)
+    target_include_directories(Tankz PRIVATE ${_glut_inc} ${_glut_inc}/GL)
+
+    target_link_libraries(Tankz PRIVATE GLUT::GLUT GLEW::GLEW OpenGL::GLU)
 
 elseif(APPLE)
     # -- macOS ------------------------------------------------------------------
@@ -99,11 +90,16 @@ install(DIRECTORY ${CMAKE_SOURCE_DIR}/3DObjects DESTINATION .)
 install(FILES     ${CMAKE_SOURCE_DIR}/README.md DESTINATION .)
 
 if(WIN32)
-    get_filename_component(_freeglut_dir "${FREEGLUT_LIBRARY}" DIRECTORY)
-    file(GLOB _freeglut_dlls "${_freeglut_dir}/../bin/*.dll" "${_freeglut_dir}/*.dll")
-    get_filename_component(_glew_dir "${GLEW_LIBRARY}" DIRECTORY)
-    file(GLOB _glew_dlls    "${_glew_dir}/../bin/*.dll"    "${_glew_dir}/*.dll")
-    install(FILES ${_freeglut_dlls} ${_glew_dlls} DESTINATION .)
+    # Copy runtime DLLs (freeglut, GLEW) next to the executable at install time.
+    # GLUT::GLUT is an UNKNOWN imported target so IMPORTED_RUNTIME_ARTIFACTS
+    # won't work — glob the DLLs directly from the vcpkg bin directory instead.
+    get_filename_component(_vcpkg_bin "${CMAKE_TOOLCHAIN_FILE}" DIRECTORY)
+    set(_vcpkg_bin "${_vcpkg_bin}/../../installed/x64-windows/bin")
+    file(GLOB _runtime_dlls
+        "${_vcpkg_bin}/freeglut.dll"
+        "${_vcpkg_bin}/glew32.dll"
+    )
+    install(FILES ${_runtime_dlls} DESTINATION .)
 endif()
 
 # -- CPack ----------------------------------------------------------------------
