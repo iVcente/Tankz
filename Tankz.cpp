@@ -7,12 +7,14 @@
 
 #ifdef __APPLE__
 #include <GLUT/glut.h>
+#include <mach-o/dyld.h>
 #endif
 
 #ifdef __linux__
 #include <glut.h>
 #endif
 
+#include <filesystem>
 #include <iostream>
 #include <vector>
 
@@ -35,6 +37,36 @@ int enemies = 0;
 int allies = 0;
 static float lastMousePos = 0.0f;
 static bool firstTimeMouse = true;
+
+/*
+ * Get the path of where the executable is located. Due to
+ * how each OS handles the CWD (current working directory) 
+ * when launching an application.
+ * 
+ * No parameters.
+ * Path directory of where the executable is located.
+ */
+std::filesystem::path getExecutableDir() {
+	#if defined(_WIN32)
+		char buffer[1024];
+		GetModuleFileNameA(nullptr, buffer, sizeof(buffer)); // windows.h
+		return std::filesystem::path(buffer).parent_path();
+
+	#elif defined(__APPLE__)
+		char buffer[1024];
+		uint32_t size = sizeof(buffer);
+		if (_NSGetExecutablePath(buffer, &size) != 0) {
+			return std::filesystem::current_path();
+		}
+		return std::filesystem::path(buffer).parent_path();
+
+	#elif defined(__linux__)
+		return std::filesystem::canonical("/proc/self/exe").parent_path();
+
+	#else
+		return std::filesystem::current_path(); // Fallback
+	#endif
+}
 
 /* 
  * Defines the scenario's lighting.
@@ -148,8 +180,10 @@ void loadTextures() {
  * No return.
  */
 void loadModels() {
-	loadModel("3DObjects/Tree1.obj", models);
-	loadModel("3DObjects/Tree2.obj", models);
+	std::string filePath = (getExecutableDir() / "3DObjects").string();
+
+	loadModel(filePath + "/Tree1.obj", models);
+	loadModel(filePath + "/Tree2.obj", models);
 }
 
 /* 

@@ -104,7 +104,7 @@ struct Model {
  * No return.
  */ 
 inline void loadModel(std::string filePath, std::vector<Model>& models) {
-    std::ifstream file(filePath);
+    std::ifstream file = std::ifstream(filePath, std::ios_base::in);
 
     if (!file.is_open()) {
         std::cerr << "ERROR! Could not find: " << filePath << "\n";
