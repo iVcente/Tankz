@@ -17,34 +17,34 @@ Each object you hit grants a different number of points, and the total determine
 ## How to Play the Game
 
 Keybindings:
-* `W`: Move the tank forward;
-* `S`: Move the tank backward;
-* `A`: Rotate the tank to the left;
-* `D`: Rotate the tank to the right;
-* `Space Bar`: Shoot;
-* `↑`: Rotate the tank cannon up;
-* `↓`: Rotate the tank cannon down;
-* `←`: Rotate the tank’s second axis to the left;
-* `→`: Rotate the tank’s second axis to the right;
-* `I`: Move the camera forward;
-* `K`: Move the camera backward;
-* `L`: Move the camera up;
-* `J`: Move the camera down;
-* `1`: Set the camera to the left side, facing the center;
-* `2`: Set the camera to the top side, facing the center;
-* `3`: Set the camera to the right side, facing the center;
-* `4`: Set the camera to the bottom side, facing the center;
-* `5`: Set the camera to the left side with a higher Y position;
-* `F`: Toggle fullscreen;
-* `ESC`: Exit the program.
+- `W`: Move the tank forward;
+- `S`: Move the tank backward;
+- `A`: Rotate the tank to the left;
+- `D`: Rotate the tank to the right;
+- `Space Bar`: Shoot;
+- `↑`: Rotate the tank cannon up;
+- `↓`: Rotate the tank cannon down;
+- `←`: Rotate the tank’s second axis to the left;
+- `→`: Rotate the tank’s second axis to the right;
+- `I`: Move the camera forward;
+- `K`: Move the camera backward;
+- `L`: Move the camera up;
+- `J`: Move the camera down;
+- `1`: Set the camera to the left side, facing the center;
+- `2`: Set the camera to the top side, facing the center;
+- `3`: Set the camera to the right side, facing the center;
+- `4`: Set the camera to the bottom side, facing the center;
+- `5`: Set the camera to the left side with a higher Y position;
+- `F`: Toggle fullscreen;
+- `ESC`: Exit the program.
 
 You can also use the mouse to control the camera horizontally.
 
 ## How the Score System Works
 
-* Enemy destroyed: +10 points;
-* Ally destroyed: -10 points;
-* Wall block destroyed: -5 points.
+- Enemy destroyed: +10 points;
+- Ally destroyed: -10 points;
+- Wall block destroyed: -5 points.
 
 ## How to run the game
 
@@ -84,13 +84,13 @@ make all
 ---
 
 ## Technologies and Libraries Used
-* C++
-* OpenGL and GLUT
-* [stb](https://github.com/nothings/stb)(stb_image.h)
+- C++
+- OpenGL and GLUT
+- [stb](https://github.com/nothings/stb)(stb_image.h)
 
 ---
 
 ## Acknowledgements
 
-* My college professor, Márcio Sarroglia Pinho;
-* These two YouTube channels helped a lot: [Sergio Silva](https://www.youtube.com/channel/UCtaYud62YmszOEpGwkWVJPw) and [Tech with Tim](https://www.youtube.com/c/TechWithTim/featured).
+- My college professor, Márcio Sarroglia Pinho;
+- These two YouTube channels helped a lot: [Sergio Silva](https://www.youtube.com/channel/UCtaYud62YmszOEpGwkWVJPw) and [Tech with Tim](https://www.youtube.com/c/TechWithTim/featured).
