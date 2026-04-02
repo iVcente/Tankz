@@ -1,12 +1,22 @@
 cmake_minimum_required(VERSION 3.16)
 
-# -- vcpkg fallback (if toolchain wasn't passed via -DCMAKE_TOOLCHAIN_FILE) ----
+# -- vcpkg toolchain detection -------------------------------------------------
 if(WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     if(DEFINED ENV{VCPKG_ROOT})
-        set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+        set(_vcpkg_root "$ENV{VCPKG_ROOT}")
     elseif(EXISTS "C:/vcpkg/scripts/buildsystems/vcpkg.cmake")
-        set(CMAKE_TOOLCHAIN_FILE "C:/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+        set(_vcpkg_root "C:/vcpkg")
+    else()
+        message(FATAL_ERROR
+            "\nvcpkg not found. Please set it up manually from a terminal:\n"
+            "  1. git clone https://github.com/microsoft/vcpkg C:/vcpkg (if installed elsewhere, set the VCPKG_ROOT environment variable with location)\n"
+            "  2. C:/vcpkg/bootstrap-vcpkg.bat\n"
+            "  3. C:/vcpkg/vcpkg install freeglut glew\n"
+            "Then re-run Make\n"
+        )
     endif()
+
+    set(CMAKE_TOOLCHAIN_FILE "${_vcpkg_root}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
 endif()
 
 project(Tankz LANGUAGES CXX)
