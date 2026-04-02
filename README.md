@@ -1,75 +1,96 @@
 # Tankz
-A project to study C++ and OpenGL. It's a game where you control a tank and the objective is to destroy all enemies in the scenario. Right in the middle of the scenario there's a wall, on one side there's the tank and on the other side of the wall there are allies and enemies. The allies are represented by green trees and the enemies are represented by red trees. The tank can move in all directions and has two other axes that move independently. The tank can shoot one projectile at a time; it can collide with an ally, an enemy and a wall block. The projectile will be destroyed if it collides with any of these objects or in case it moves away from the scenario limits. The game ends when all the enemies are destroyed. Every object you hit you gain different points number, the sum of these points will be your final score. The final score and the points will be printed in the terminal.
+
+A project to learn C++ and OpenGL. It is a game where you control a tank, and the objective is to destroy all enemies in the scenario.
+
+At the center of the map, there is a wall. On one side, there is the player’s tank; on the other side, there are allies and enemies. Allies are represented by green trees, while enemies are represented by red trees.
+
+The tank can move in all directions and has two additional axes that move independently. It can shoot one projectile at a time. The projectile can collide with allies, enemies, or wall blocks, and it is destroyed upon collision or when it goes beyond the map boundaries.
+
+The game ends when all enemies are destroyed.
+
+Each object you hit grants a different number of points, and the total determines your final score. The score is displayed in the terminal.
 
 <p align="center">
 <img src="https://media.giphy.com/media/geCQavOUZHWqJymaAp/giphy.gif">
 </p>
 
-How to play the game
----
+## How to Play the Game
 
-You can use the following commands:
-* `W` : Moves the tank forward;
-* `S` : Moves the tank backward;
-* `A` : Rotates the tank to the left;
-* `D` : Rotates the tank to the right;
-* `Space Bar` : Shoots;
-* `↑` : Rotates the tank cannon up;
-* `↓` : Rotates the tank cannon down;
-* `←` : Rotates the tank second axis to the left;
-* `→` : Rotates the tank second axis to the right;
-* `I` : Moves the camera forward;
-* `K` : Moves the camera backward;
-* `L` : Moves the camera up;
-* `J` : Moves the camera down;
-* `1` : Sets the camera position looking to the center of the scenario while being at the left side;
-* `2` : Sets the camera position looking to the center of the scenario while being at the top side;
-* `3` : Sets the camera position looking to the center of the scenario while being at the right side;
-* `4` : Set the camera position looking to the center of the scenario while being at the bottom side;
-* `5` : Set the camera position looking to the center of the scenario while being at the left side and with a higher Y;
-* `F` : Full screen;
-* `ESC` : Exits the program.
+Keybindings:
+* `W`: Move the tank forward;
+* `S`: Move the tank backward;
+* `A`: Rotate the tank to the left;
+* `D`: Rotate the tank to the right;
+* `Space Bar`: Shoot;
+* `↑`: Rotate the tank cannon up;
+* `↓`: Rotate the tank cannon down;
+* `←`: Rotate the tank’s second axis to the left;
+* `→`: Rotate the tank’s second axis to the right;
+* `I`: Move the camera forward;
+* `K`: Move the camera backward;
+* `L`: Move the camera up;
+* `J`: Move the camera down;
+* `1`: Set the camera to the left side, facing the center;
+* `2`: Set the camera to the top side, facing the center;
+* `3`: Set the camera to the right side, facing the center;
+* `4`: Set the camera to the bottom side, facing the center;
+* `5`: Set the camera to the left side with a higher Y position;
+* `F`: Toggle fullscreen;
+* `ESC`: Exit the program.
 
-Finally, you can use the mouse to control the camera in the horizontal axis.
+You can also use the mouse to control the camera horizontally.
 
-How the score system works
----
+## How the Score System Works
 
 * Enemy destroyed: +10 points;
 * Ally destroyed: -10 points;
 * Wall block destroyed: -5 points.
 
-How to run the game
+## How to run the game
+
+Check [Releases](https://github.com/iVcente/Tankz/releases) to download precompiled binaries. If you prefer to build from source, make sure Make and CMake are installed before proceeding.
+
+### macOS & Linux
+
+Just run:
+```bash
+make all
+```
+
+### Windows
+
+Download `vcpkg` (if installed anywhere else than `C:/`, setting `VCPKG_ROOT` environment variable is mandatory):
+```bash
+git clone https://github.com/microsoft/vcpkg C:/vcpkg
+```
+
+Set `VCPKG_ROOT` environment variable -- optional if `vcpkg` is in `C:/vcpkg`.
+
+Execute `vcpkg` bootstrap:
+```bash
+./Path/To/vcpkg/bootstrap-vcpkg.bat
+```
+
+Install dependencies:
+```bash
+./vcpkg install freeglut glew
+```
+
+Build project:
+```bash
+make all
+```
+
 ---
 
-> On Windows 🖥:
-
-```
-g++-10 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz -lopengl32 -lglew32 -lfreeglut -lglu32 
-```
-
-> On MacOS 🍎:
-
-```
-g++-10 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz -Wno-deprecated -framework OpenGL -framework GLUT
-```
-
-> On Linux 🐧:
-
-```
-g++-10 Tankz.cpp Camera.cpp GameObject.cpp Player.cpp Projectile.cpp stb_image.cpp -o Tankz -lglut -lGLU -lGL
-```
-
-If you happen to have any issues trying to compile the program, here's a [Gist](https://gist.github.com/iVcente/812e65c551392ae0337e3afdc870032e) to help you.
-
-Technologies and libraries used
----
+## Technologies and Libraries Used
 * C++
 * OpenGL and GLUT
-* [stb](https://github.com/nothings/stb) (stb_image.h)
+* [stb](https://github.com/nothings/stb)(stb_image.h)
 
-I got help from:
 ---
 
-* My college professor: Márcio Sarroglia Pinho;
-* These two channels on YouTube helped a lot: [Sergio Silva](https://www.youtube.com/channel/UCtaYud62YmszOEpGwkWVJPw) and [Tech with Tim](https://www.youtube.com/c/TechWithTim/featured).
+## Acknowledgements
+
+* My college professor, Márcio Sarroglia Pinho;
+* These two YouTube channels helped a lot: [Sergio Silva](https://www.youtube.com/channel/UCtaYud62YmszOEpGwkWVJPw) and [Tech with Tim](https://www.youtube.com/c/TechWithTim/featured).
