@@ -35,7 +35,7 @@ Keybindings:
 - `3`: Set the camera to the right side, facing the center;
 - `4`: Set the camera to the bottom side, facing the center;
 - `5`: Set the camera to the left side with a higher Y position;
-- `F`: Toggle fullscreen;
+- `F`: Enable fullscreen;
 - `ESC`: Exit the program.
 
 You can also use the mouse to control the camera horizontally.
