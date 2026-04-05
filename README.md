@@ -14,6 +14,8 @@ Each object you hit grants a different number of points, and the total determine
 <img src="https://media.giphy.com/media/geCQavOUZHWqJymaAp/giphy.gif">
 </p>
 
+---
+
 ## How to Play the Game
 
 Keybindings:
@@ -40,11 +42,15 @@ Keybindings:
 
 You can also use the mouse to control the camera horizontally.
 
+---
+
 ## How the Score System Works
 
 - Enemy destroyed: +10 points;
 - Ally destroyed: -10 points;
 - Wall block destroyed: -5 points.
+
+---
 
 ## How to run the game
 
