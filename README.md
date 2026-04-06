@@ -92,7 +92,7 @@ make all
 ## Technologies and Libraries Used
 - C++
 - OpenGL and GLUT
-- [stb](https://github.com/nothings/stb)(stb_image.h)
+- [stb](https://github.com/nothings/stb) (stb_image.h)
 
 ---
 
