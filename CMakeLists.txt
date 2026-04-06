@@ -81,6 +81,12 @@ elseif(APPLE)
 else()
     # -- Linux ------------------------------------------------------------------
     find_package(GLUT REQUIRED)
+
+    # freeglut installs headers under <prefix>/GL/glut.h, but the source
+    # includes bare <glut.h>, so expose the GL/ subdirectory as well.
+    get_target_property(_glut_inc GLUT::GLUT INTERFACE_INCLUDE_DIRECTORIES)
+    target_include_directories(Tankz PRIVATE ${_glut_inc} ${_glut_inc}/GL)
+
     target_link_libraries(Tankz PRIVATE GLUT::GLUT OpenGL::GLU)
 endif()
 
