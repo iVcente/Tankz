@@ -16,7 +16,7 @@ Each object you hit grants a different number of points, and the total determine
 
 ---
 
-## How to Play the Game
+## How to Play
 
 Keybindings:
 - `W`: Move the tank forward;
@@ -52,13 +52,28 @@ You can also use the mouse to control the camera horizontally.
 
 ---
 
-## How to run the game
+## How to Run and Build
 
 Check [Releases](https://github.com/iVcente/Tankz/releases) to download precompiled binaries. If you prefer to build from source, make sure Make and CMake are installed before proceeding.
 
-### macOS & Linux
+### macOS
 
 Just run:
+```bash
+make all
+```
+
+### Linux
+
+Download and install dependencies with:
+```bash
+sudo apt update
+```
+```bash
+sudo apt install -y build-essential cmake libglu1-mesa-dev freeglut3-dev
+```
+
+Build project:
 ```bash
 make all
 ```
@@ -90,9 +105,10 @@ make all
 ---
 
 ## Technologies and Libraries Used
-- C++
-- OpenGL and GLUT
-- [stb](https://github.com/nothings/stb) (stb_image.h)
+
+- C++;
+- OpenGL and GLUT;
+- [stb](https://github.com/nothings/stb) (stb_image.h).
 
 ---
 
