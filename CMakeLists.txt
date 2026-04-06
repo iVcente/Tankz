@@ -120,7 +120,9 @@ endif()
 
 # -- CPack ----------------------------------------------------------------------
 set(CPACK_PACKAGE_NAME        "Tankz")
-set(CPACK_PACKAGE_VERSION     "1.0.0")
+if(NOT DEFINED CPACK_PACKAGE_VERSION)
+    set(CPACK_PACKAGE_VERSION "1.0.0")
+endif()
 set(CPACK_PACKAGE_DESCRIPTION "A C++/OpenGL tank game")
 set(CPACK_PACKAGE_VENDOR      "Tankz")
 set(CPACK_PACKAGE_FILE_NAME   "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CMAKE_SYSTEM_NAME}")

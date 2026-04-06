@@ -1,8 +1,7 @@
 # Tankz
 
-A project to learn C++ and OpenGL. It is a game where you control a tank, and the objective is to destroy all enemies in the scenario.
-
-At the center of the map, there is a wall. On one side, there is the player’s tank; on the other side, there are allies and enemies. Allies are represented by green trees, while enemies are represented by red trees.
+A college project to start learning C++ and OpenGL. It is a game where you control a tank, and the objective is to destroy all enemies in the scenario.
+At the center of the map, there is a wall. On one side, there is the player's tank; on the other side, there are allies and enemies. Allies are represented by green trees, while enemies are represented by red trees.
 
 The tank can move in all directions and has two additional axes that move independently. It can shoot one projectile at a time. The projectile can collide with allies, enemies, or wall blocks, and it is destroyed upon collision or when it goes beyond the map boundaries.
 
@@ -26,8 +25,8 @@ Keybindings:
 - `Space Bar`: Shoot;
 - `↑`: Rotate the tank cannon up;
 - `↓`: Rotate the tank cannon down;
-- `←`: Rotate the tank’s second axis to the left;
-- `→`: Rotate the tank’s second axis to the right;
+- `←`: Rotate the tank's second axis to the left;
+- `→`: Rotate the tank's second axis to the right;
 - `I`: Move the camera forward;
 - `K`: Move the camera backward;
 - `L`: Move the camera up;
