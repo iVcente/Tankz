@@ -79,24 +79,35 @@ make all
 
 ### Windows
 
-Download `vcpkg` (if installed anywhere else than `C:/`, setting `VCPKG_ROOT` environment variable is mandatory):
+Download and install Make:
 ```bash
-git clone https://github.com/microsoft/vcpkg C:/vcpkg
+winget install --exact --id GnuWin32.Make
+```
+Add it to Windows PATH with `C:\Program Files (x86)\GnuWin32\bin`.
+
+Download and install CMake:
+```bash
+winget install --exact --id Kitware.CMake
 ```
 
-Set `VCPKG_ROOT` environment variable -- optional if `vcpkg` is in `C:/vcpkg`.
+In order to download project's dependencies, vcpkg is required. `C:\` is a good place for it -- if you'd like to install it anywhere else, just remember to update the next instructions accordingly.
 
-Execute `vcpkg` bootstrap:
+Download vcpkg:
 ```bash
-./Path/To/vcpkg/bootstrap-vcpkg.bat
+git clone https://github.com/microsoft/vcpkg C:\vcpkg
 ```
 
-Install dependencies:
+Set `VCPKG_ROOT` environment variable to `C:\vcpkg` and add `%VCPKG_ROOT%` to Windows PATH. Then run:
 ```bash
-./vcpkg install freeglut glew
+& "C:\vcpkg\bootstrap-vcpkg.bat"
 ```
 
-Build project:
+Now inside the project directory, install dependencies:
+```bash
+vcpkg install freeglut glew
+```
+
+Finally, build project:
 ```bash
 make all
 ```
